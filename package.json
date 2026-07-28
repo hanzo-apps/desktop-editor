@@ -1,0 +1,39 @@
+{
+  "name": "desktop-editor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "CodeMirror 6 code editor in a Tauri window \u2014 real filesystem tree, syntax highlighting, \u2318S writes through.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "desktop": "tauri dev",
+    "desktop:build": "tauri build"
+  },
+  "dependencies": {
+    "@hanzo/base": "^0.2.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "@tauri-apps/api": "^2.11.1",
+    "@codemirror/commands": "^6.9.0",
+    "@codemirror/lang-javascript": "^6.2.5",
+    "@codemirror/lang-json": "^6.0.2",
+    "@codemirror/lang-rust": "^6.0.2",
+    "@codemirror/language": "^6.11.4",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/theme-one-dark": "^6.1.3",
+    "@codemirror/view": "^6.39.1",
+    "@tauri-apps/plugin-dialog": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "@tauri-apps/cli": "^2.11.4"
+  }
+}
