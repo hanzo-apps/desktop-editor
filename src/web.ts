@@ -4,7 +4,7 @@ import type { Entry } from "./app";
 /** Browser fallback: a small in-memory project so the preview opens on real
  *  code. The native build talks to the actual filesystem through Rust. */
 const FILES: Record<string, string> = {
-  "/demo/src/app.tsx": `import { useState } from "react";
+  "/demo/app.tsx": `import { useState } from "react";
 
 // The preview you are reading runs the same CodeMirror 6 setup the desktop
 // build does. Only the file source differs: this tree is in memory, the
@@ -14,7 +14,7 @@ export default function App() {
   return <button onClick={() => setN(n + 1)}>clicked {n}</button>;
 }
 `,
-  "/demo/src/lib.rs": `//! Four commands are the whole native side of an editor.
+  "/demo/lib.rs": `//! Four commands are the whole native side of an editor.
 
 #[tauri::command]
 fn read_tree(path: String) -> Vec<Entry> {

@@ -33,9 +33,23 @@ export default function App() {
 
   async function load(dir: string) {
     setRoot(dir);
-    setTree(await call("read_tree", { path: dir }));
+    const t = await call("read_tree", { path: dir });
+    setTree(t);
+    return t;
   }
-  useEffect(() => { call("start_dir").then(load); }, []);
+  function pick(p: string) {
+    setPath(p);
+    setOpen((o) => (o.includes(p) ? o : [...o, p]));
+  }
+  // Open on real code, not an empty pane.
+  useEffect(() => {
+    call("start_dir")
+      .then(load)
+      .then((t) => {
+        const f = t.find((e) => !e.dir && /\.(tsx?|rs|jsx?)$/.test(e.name)) ?? t.find((e) => !e.dir);
+        if (f) pick(f.path);
+      });
+  }, []);
 
   // One EditorView, reconfigured per file. Creating a view per tab leaks DOM
   // and loses undo history; swapping state keeps both cheap.
@@ -113,7 +127,7 @@ export default function App() {
               </NavItem>
             ))}
             {files.map((e) => (
-              <NavItem key={e.path} on={e.path === path} onClick={() => { setPath(e.path); setOpen((o) => o.includes(e.path) ? o : [...o, e.path]); }}>
+              <NavItem key={e.path} on={e.path === path} onClick={() => pick(e.path)}>
                 {e.name}
               </NavItem>
             ))}
