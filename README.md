@@ -1,13 +1,22 @@
 # Editor
 
+<!-- hanzo-badges -->
+<p align="left">
+  <a href="https://platform.hanzo.ai/new?repo=https%3A%2F%2Fgithub.com%2Fhanzo-apps%2Fdesktop-editor&template=desktop-editor"><img src="https://gallery.hanzo.ai/deploy.svg" alt="Deploy to Hanzo" height="32" /></a>
+  <a href="https://hanzo.ai/chat?template=desktop-editor"><img src="https://gallery.hanzo.ai/badges/edit-in-hanzo.svg" alt="Edit in Hanzo.ai" height="32" /></a>
+  <a href="https://gallery.hanzo.ai/templates/desktop-editor"><img src="https://gallery.hanzo.ai/badges/live-preview.svg" alt="Live Preview" height="32" /></a>
+  <a href="https://gallery.hanzo.ai/llms/desktop-editor/LLM.md"><img src="https://gallery.hanzo.ai/badges/llm-md.svg" alt="LLM.md Playbook" height="32" /></a>
+</p>
+<!-- /hanzo-badges -->
+
 CodeMirror 6 code editor in a Tauri window — real filesystem tree, syntax highlighting, ⌘S writes through.
 
 A **Hanzo desktop template**: one codebase, three installers (macOS, Windows,
 Linux) and a web build. Fork it, `npm i`, ship.
 
 - Live web preview: <https://desktop-editor.hanzo.app>
-- Installers: <https://github.com/hanzo-templates/desktop-editor/releases/latest>
-- Source: <https://github.com/hanzo-templates/desktop-editor>
+- Installers: <https://github.com/hanzo-apps/desktop-editor/releases/latest>
+- Source: <https://github.com/hanzo-apps/desktop-editor>
 
 ![desktop-editor](./public/preview.png)
 
